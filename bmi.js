@@ -77,3 +77,39 @@ console.log(LINE); // Logs the dashed-line.
  * TODO: Make sure to TEST YOUR SOFTWARE! Does it work, when People are smaller than 1 meter? Or taller than 2?
  * Tip: An 18-Year old Woman, sized 160cm with 60 kg should have a BMR of 1467 kcal and a BMI of 23.4375.
  */
+console.log("Welcome to your BMI calculator!")
+let lastname = window.prompt("What is your Lastname?");
+let firstname = window.prompt("What is your Firstname?");
+let age = window.prompt("What is your Age?");
+let height = window.prompt("What is your Height(in cm)?");
+let weight = window.prompt("What is your Weight(in Kg)?");
+let gender;
+do{
+    gender = window.prompt("What Gender do you prefer for the Calculation of the bmr(male/female)?)")
+}while(gender.toLowerCase()!="male" && gender.toLowerCase()!="female")
+console.log(LINE);
+console.log("Name:\t\t\t\t\t"+ lastname + ", "+firstname);
+console.log(LINE);
+console.log("Age:\t\t\t\t\t"+age + " Years");
+console.log("Height:\t\t\t\t\t"+height/100 + "m");
+console.log("Weight:\t\t\t\t\t"+weight+ " kg");
+function bmrcalc(A, B , C , D)
+{
+    bmr =  A + B * weight + C * height- D * age
+    return "Basal Metabolic Rate:\t"+ bmr + " kcal";
+}
+if(gender.toLocaleLowerCase() === "male"){
+    console.log(bmrcalc(66,14,5,7))
+}
+else if(gender.toLocaleLowerCase() === "female"){
+    console.log(bmrcalc(655,10,2,6))
+}
+bmi = (10000 * weight) / (height)**2;
+console.log("Body Mass Index: \t\t"+bmi);
+bmi >=18 && bmi <= 25 ? normal = true : normal = false;
+console.log("Normal Weight: \t\t\t"+normal);
+bmi < 16 || bmi > 30 ? danger = true : danger = false;
+console.log("Danger: \t\t\t\t"+danger);
+
+//Testen: Grundsätzlich funktioniert der BMI Rechner noch, das Ergebnis ist jedoch nicht richtig.
+
