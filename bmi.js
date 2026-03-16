@@ -84,8 +84,12 @@ let age = window.prompt("What is your Age?");
 let height = window.prompt("What is your Height(in cm)?");
 let weight = window.prompt("What is your Weight(in Kg)?");
 let gender;
+let warning ="";
 do{
-    gender = window.prompt("What Gender do you prefer for the Calculation of the bmr(male/female)?)")
+    if(gender != undefined){
+        warning = gender+"is not a valid Input!";
+    }
+    gender = window.prompt(warning+"What Gender do you prefer for the Calculation of the bmr(male/female)?)")
 }while(gender.toLowerCase()!="male" && gender.toLowerCase()!="female")
 console.log(LINE);
 console.log("Name:\t\t\t\t\t"+ lastname + ", "+firstname);
