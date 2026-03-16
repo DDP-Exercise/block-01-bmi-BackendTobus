@@ -87,12 +87,12 @@ let gender;
 let warning ="";
 do{
     if(gender != undefined){
-        warning = gender+"is not a valid Input!";
+        warning = gender+" is not a valid Input!";
     }
     gender = window.prompt(warning+"What Gender do you prefer for the Calculation of the bmr(male/female)?)")
 }while(gender.toLowerCase()!="male" && gender.toLowerCase()!="female")
 console.log(LINE);
-console.log("Name:\t\t\t\t\t"+ lastname + ", "+firstname);
+console.log("Name:\t\t\t\t\t"+ lastname.toUpperCase() + ", "+firstname);
 console.log(LINE);
 console.log("Age:\t\t\t\t\t"+age + " Years");
 console.log("Height:\t\t\t\t\t"+height/100 + "m");
@@ -110,9 +110,9 @@ else if(gender.toLocaleLowerCase() === "female"){
 }
 bmi = (10000 * weight) / (height)**2;
 console.log("Body Mass Index: \t\t"+bmi);
-bmi >=18 && bmi <= 25 ? normal = true : normal = false;
+bmi >=18 && bmi <= 25 ? normal = "Yes!" : normal = "No!";
 console.log("Normal Weight: \t\t\t"+normal);
-bmi < 16 || bmi > 30 ? danger = true : danger = false;
+bmi < 16 || bmi > 30 ? danger = "Yes!" : danger = "No!";
 console.log("Danger: \t\t\t\t"+danger);
 
 //Testen: Grundsätzlich funktioniert der BMI Rechner noch, das Ergebnis ist jedoch nicht richtig.
